@@ -1,4 +1,4 @@
 public
 
-reportWebVitals.ts
-setupTests.ts
+src/reportWebVitals.ts
+src/setupTests.ts

@@ -14,10 +14,10 @@ module.exports = {
   },
 
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
-    'airbnb',
     'plugin:@typescript-eslint/recommended',
-    "plugin:prettier/recommended"
+    'plugin:prettier/recommended',
   ],
 
   parser: '@typescript-eslint/parser',
@@ -30,18 +30,21 @@ module.exports = {
     sourceType: 'module',
   },
 
-  settings: {
-    'import/resolver': {
-      typescript: {},
-    },
-  },
-
   plugins: [
+    'import',
     'react',
     '@typescript-eslint',
     'simple-import-sort',
     'unused-imports'
   ],
+
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
+  },
 
   rules: {
     'arrow-body-style': ['warn', 'as-needed'],
@@ -49,7 +52,7 @@ module.exports = {
     'lines-between-class-members': ['warn', 'always'],
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
-    'object-curly-spacing': 'warn',
+    'object-curly-spacing': ['warn', 'always'],
     'padded-blocks': ['warn', 'never'],
     'padding-line-between-statements': ['warn',
       { blankLine: 'always', prev: '*', next: 'return' },
@@ -58,74 +61,77 @@ module.exports = {
     ],
     'spaced-comment': 'warn',
 
-    '@typescript-eslint/no-use-before-define': ['error'],
+    '@typescript-eslint/no-use-before-define': 'error',
     '@typescript-eslint/no-var-requires': 'off',
 
     'import/extensions': ['error', 'ignorePackages', {
-      ts: 'never', tsx: 'never',
-    }],
-    'import/prefer-default-export': 'off',
+        ts: 'never', tsx: 'never',
+      }],
+    'import/no-unresolved': 'error',
 
     'prettier/prettier': 'warn',
 
-    'react/destructuring-assignment': ['warn', 'always', { "ignoreClassFields": true }],
-    'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
-    'react/jsx-indent': 'warn',
-    "react/jsx-key": ['warn', { 'checkKeyMustBeforeSpread': true }],
-    'react/jsx-one-expression-per-line': 'off',
-    'react/jsx-sort-props': ['warn', {
-      'callbacksLast': true,
-      'shorthandFirst': true,
-      'shorthandLast': false,
-      'ignoreCase': false,
-      'noSortAlphabetically': false,
-      'reservedFirst': true,
+    'react/destructuring-assignment': ['warn', 'always', {
+      ignoreClassFields: true
     }],
-    'react/jsx-uses-react': 'off',
+    'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+    'react/jsx-key': ['warn', { checkKeyMustBeforeSpread: true }],
+    'react/jsx-sort-props': ['warn', {
+        callbacksLast: true,
+        shorthandFirst: true,
+        shorthandLast: false,
+        ignoreCase: false,
+        noSortAlphabetically: false,
+        reservedFirst: true,
+      }],
+    'react/jsx-uses-react': 'warn',
+    'react/jsx-uses-vars': 'warn',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/self-closing-comp': ['warn', { component: true, html: true }],
 
     'simple-import-sort/exports': 'warn',
     'simple-import-sort/imports': ['warn', { groups: [
-        [
-          // React
-          '^(react)$',
-          // Node.js builtins
-          `^(${require('module').builtinModules.join('|')})(/|$)`,
-          // Other packages
-          '^@?\\w'
-        ],
-        [
-          // Side effects
-          '^\\u0000'
-        ],
-        [
-          // Alias imports
-          '^(@|@@|@@(\\w+-?)*)(/.*(?<!\\.(jpe?g|png|svg|bmp|webp|css|scss|sass))$)',
-          // Parent imports
-          '^\\.\\.(?!/?$)',
-          '^\\.\\./?$',
-          // Relative imports
-          '^\\./(?=.*!/)(?!/?$)',
-          '^\\.(?!/?$)',
-          '^\\./?$',
-        ],
-        [
-          // Styles
-          '\\.module\\.(css|scss|sass)$',
-          '\\.scoped\\.(css|scss|sass)$',
-          '\\.(css|scss|sass)$',
-          // Images
-          '^.+\\.bmp$',
-          '^.+\\.jpe?g$',
-          '^.+\\.png$',
-          '^.+\\.svg$',
-          '^.+\\.webp$'
-        ]
+      [
+        // React
+        '^(react)$',
+        // Node.js builtins
+        `^(${require('module').builtinModules.join('|')})(/|$)`,
+        // Other packages
+        '^@?\\w'
+      ],
+      [
+        // Side effects
+        '^\\u0000'
+      ],
+      [
+        // Alias imports
+        '^(@|@@|@@(\\w+-?)*)(/.*(?<!\\.(jpe?g|png|svg|bmp|webp|css|scss|sass))$)',
+        // Parent imports
+        '^\\.\\.(?!/?$)',
+        '^\\.\\./?$',
+        // Relative imports
+        '^\\./(?=.*!/)(?!/?$)',
+        '^\\.(?!/?$)',
+        '^\\./?$',
+      ],
+      [
+        // Styles
+        '\\.module\\.(css|scss|sass)$',
+        '\\.scoped\\.(css|scss|sass)$',
+        '\\.(css|scss|sass)$',
+        // Images
+        '^.+\\.bmp$',
+        '^.+\\.jpe?g$',
+        '^.+\\.png$',
+        '^.+\\.svg$',
+        '^.+\\.webp$'
+      ]
       ] }],
 
     "unused-imports/no-unused-imports": "warn",
-    "unused-imports/no-unused-vars": [ "warn", { "varsIgnorePattern": "^_$", "argsIgnorePattern": "^_$" }],
+    "unused-imports/no-unused-vars": [ "warn", {
+      "varsIgnorePattern": "^_$", "argsIgnorePattern": "^_$"
+    }],
   },
 };
