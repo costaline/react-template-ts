@@ -3,12 +3,14 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true,
   },
 
   extends: [
     'plugin:react/recommended',
     'airbnb',
     'plugin:@typescript-eslint/recommended',
+    "plugin:prettier/recommended"
   ],
 
   parser: '@typescript-eslint/parser',
@@ -42,7 +44,6 @@ module.exports = {
       { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
       { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
     ],
-    semi: 'off',
 
     '@typescript-eslint/no-use-before-define': ['error'],
 
@@ -50,6 +51,8 @@ module.exports = {
       ts: 'never', tsx: 'never',
     }],
     'import/prefer-default-export': 'off',
+
+    'prettier/prettier': 'warn',
 
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'react/jsx-indent': 'warn',
