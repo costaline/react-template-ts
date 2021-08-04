@@ -6,6 +6,13 @@ module.exports = {
     jest: true,
   },
 
+  globals: {
+    window: true,
+    define: true,
+    require: true,
+    module: true,
+  },
+
   extends: [
     'plugin:react/recommended',
     'airbnb',
@@ -32,11 +39,15 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'simple-import-sort',
+    'unused-imports'
   ],
 
   rules: {
     'arrow-body-style': ['warn', 'as-needed'],
+    'global-require': 'off',
     'lines-between-class-members': ['warn', 'always'],
+    'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'object-curly-spacing': 'warn',
     'padded-blocks': ['warn', 'never'],
@@ -45,8 +56,10 @@ module.exports = {
       { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
       { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
     ],
+    'spaced-comment': 'warn',
 
     '@typescript-eslint/no-use-before-define': ['error'],
+    '@typescript-eslint/no-var-requires': 'off',
 
     'import/extensions': ['error', 'ignorePackages', {
       ts: 'never', tsx: 'never',
@@ -72,5 +85,47 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/self-closing-comp': ['warn', { component: true, html: true }],
+
+    'simple-import-sort/exports': 'warn',
+    'simple-import-sort/imports': ['warn', { groups: [
+        [
+          // React
+          '^(react)$',
+          // Node.js builtins
+          `^(${require('module').builtinModules.join('|')})(/|$)`,
+          // Other packages
+          '^@?\\w'
+        ],
+        [
+          // Side effects
+          '^\\u0000'
+        ],
+        [
+          // Alias imports
+          '^(@|@@|@@(\\w+-?)*)(/.*(?<!\\.(jpe?g|png|svg|bmp|webp|css|scss|sass))$)',
+          // Parent imports
+          '^\\.\\.(?!/?$)',
+          '^\\.\\./?$',
+          // Relative imports
+          '^\\./(?=.*!/)(?!/?$)',
+          '^\\.(?!/?$)',
+          '^\\./?$',
+        ],
+        [
+          // Styles
+          '\\.module\\.(css|scss|sass)$',
+          '\\.scoped\\.(css|scss|sass)$',
+          '\\.(css|scss|sass)$',
+          // Images
+          '^.+\\.bmp$',
+          '^.+\\.jpe?g$',
+          '^.+\\.png$',
+          '^.+\\.svg$',
+          '^.+\\.webp$'
+        ]
+      ] }],
+
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": [ "warn", { "varsIgnorePattern": "^_$", "argsIgnorePattern": "^_$" }],
   },
 };
