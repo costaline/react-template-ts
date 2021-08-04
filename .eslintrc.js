@@ -36,6 +36,7 @@ module.exports = {
 
   rules: {
     'arrow-body-style': ['warn', 'as-needed'],
+    'lines-between-class-members': ['warn', 'always'],
     'no-use-before-define': 'off',
     'object-curly-spacing': 'warn',
     'padded-blocks': ['warn', 'never'],
@@ -54,11 +55,22 @@ module.exports = {
 
     'prettier/prettier': 'warn',
 
+    'react/destructuring-assignment': ['warn', 'always', { "ignoreClassFields": true }],
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'react/jsx-indent': 'warn',
+    "react/jsx-key": ['warn', { 'checkKeyMustBeforeSpread': true }],
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-sort-props': ['warn', {
+      'callbacksLast': true,
+      'shorthandFirst': true,
+      'shorthandLast': false,
+      'ignoreCase': false,
+      'noSortAlphabetically': false,
+      'reservedFirst': true,
+    }],
     'react/jsx-uses-react': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': ['warn', { component: true, html: true }],
   },
 };
