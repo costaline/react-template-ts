@@ -14,8 +14,8 @@ module.exports = {
   },
 
   extends: [
-    'eslint:recommended',
     'plugin:react/recommended',
+    'standard',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
@@ -24,7 +24,7 @@ module.exports = {
 
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 12,
     sourceType: 'module',
@@ -35,7 +35,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'simple-import-sort',
-    'unused-imports'
+    'unused-imports',
   ],
 
   settings: {
@@ -44,6 +44,9 @@ module.exports = {
         alwaysTryTypes: true,
       },
     },
+    react: {
+      version: 'detect',
+    }
   },
 
   rules: {
@@ -52,6 +55,7 @@ module.exports = {
     'lines-between-class-members': ['warn', 'always'],
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
+    'object-curly-newline': 'off',
     'object-curly-spacing': ['warn', 'always'],
     'padded-blocks': ['warn', 'never'],
     'padding-line-between-statements': ['warn',
@@ -64,9 +68,10 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'error',
     '@typescript-eslint/no-var-requires': 'off',
 
+    'import/export': 'off',
     'import/extensions': ['error', 'ignorePackages', {
-        ts: 'never', tsx: 'never',
-      }],
+      ts: 'never', tsx: 'never',
+    }],
     'import/no-unresolved': 'error',
 
     'prettier/prettier': 'warn',
@@ -77,13 +82,13 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'react/jsx-key': ['warn', { checkKeyMustBeforeSpread: true }],
     'react/jsx-sort-props': ['warn', {
-        callbacksLast: true,
-        shorthandFirst: true,
-        shorthandLast: false,
-        ignoreCase: false,
-        noSortAlphabetically: false,
-        reservedFirst: true,
-      }],
+      callbacksLast: true,
+      shorthandFirst: true,
+      shorthandLast: false,
+      ignoreCase: false,
+      noSortAlphabetically: false,
+      reservedFirst: true,
+    }],
     'react/jsx-uses-react': 'warn',
     'react/jsx-uses-vars': 'warn',
     'react/prop-types': 'off',
@@ -126,12 +131,12 @@ module.exports = {
         '^.+\\.png$',
         '^.+\\.svg$',
         '^.+\\.webp$'
-      ]
-      ] }],
+      ],
+    ] }],
 
     "unused-imports/no-unused-imports": "warn",
     "unused-imports/no-unused-vars": [ "warn", {
       "varsIgnorePattern": "^_$", "argsIgnorePattern": "^_$"
     }],
   },
-};
+}
