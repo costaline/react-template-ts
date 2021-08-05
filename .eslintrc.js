@@ -51,6 +51,7 @@ module.exports = {
 
   rules: {
     'arrow-body-style': ['warn', 'as-needed'],
+    'dot-notation': 'off',
     'global-require': 'off',
     'lines-between-class-members': ['warn', 'always'],
     'no-unused-vars': 'off',
@@ -65,7 +66,7 @@ module.exports = {
     ],
     'spaced-comment': 'warn',
 
-    '@typescript-eslint/no-use-before-define': 'error',
+    '@typescript-eslint/no-use-before-define': ["error", { "functions": false }],
     '@typescript-eslint/no-var-requires': 'off',
 
     'import/export': 'off',
