@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { Logo } from '@@/shared/elements';
+import { sassVars } from '@@/shared/helpers';
 
 import './main.scss';
 
@@ -15,6 +16,9 @@ export const Main: FC = () => (
         className="main__link"
         href="https://reactjs.org"
         rel="noopener noreferrer"
+        style={{
+          color: sassVars['color-bright'],
+        }}
         target="_blank"
       >
         Learn React
