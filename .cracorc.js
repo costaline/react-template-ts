@@ -1,10 +1,20 @@
 const CracoAlias = require("craco-alias");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const SassResourcesLoader = require('./.config-helpers/sassResourcesLoader');
 
 const tsConfig = require('./tsconfig.paths.json');
 
 module.exports = function({ env }) {
+  const plugins = [];
+
+  if (process.env.REACT_APP_BUNDLE_TREEMAP === 'true') {
+    plugins.push(new BundleAnalyzerPlugin())
+  }
+
   return {
+    webpack: {
+      plugins: [...plugins],
+    },
     plugins: [
       {
         plugin: CracoAlias,
