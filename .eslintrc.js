@@ -54,6 +54,7 @@ module.exports = {
     'dot-notation': 'off',
     'global-require': 'off',
     'lines-between-class-members': ['warn', 'always'],
+    'no-console': 'warn',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'object-curly-newline': 'off',
