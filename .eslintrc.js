@@ -66,6 +66,8 @@ module.exports = {
     ],
     'spaced-comment': 'warn',
 
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': ["error", { "functions": false }],
     '@typescript-eslint/no-var-requires': 'off',
 
