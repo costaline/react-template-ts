@@ -1,1 +1,1 @@
-export * from './sassVars';
+export * from './getVariableFromSass';
