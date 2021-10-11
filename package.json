@@ -61,7 +61,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-unused-imports": "^1.1.2",
+    "eslint-plugin-unused-imports": "^1.1.5",
     "prettier": "^2.3.2",
     "sass-resources-loader": "^2.2.3",
     "stylelint": "^13.13.1",
