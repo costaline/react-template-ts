@@ -36,7 +36,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.0",
     "reseter.css": "^2.0.0",
-    "sass": "^1.43.4",
+    "sass": "^1.43.5",
     "serve": "^12.0.1",
     "web-vitals": "^1.1.2"
   },
@@ -70,7 +70,7 @@
     "stylelint-config-recommended": "^5.0.0",
     "stylelint-prettier": "^1.2.0",
     "stylelint-scss": "^3.21.0",
-    "typescript": "^4.4.4",
+    "typescript": "^4.5.2",
     "webpack-bundle-analyzer": "^4.5.0"
   }
 }
