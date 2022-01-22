@@ -23,7 +23,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "env-cmd": "^10.1.0",
@@ -34,14 +34,14 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.0",
+    "redux-thunk": "^2.4.1",
     "reseter.css": "^2.0.0",
     "sass": "^1.43.5",
     "serve": "^12.0.1",
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {
-    "@craco/craco": "^6.4.2",
+    "@craco/craco": "^6.4.3",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.37",
